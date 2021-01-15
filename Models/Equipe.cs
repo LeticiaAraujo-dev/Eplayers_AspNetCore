@@ -44,7 +44,7 @@ namespace Eplayers_AspNetCore.Models
                 string[] linha = item.Split(";");
 
                 Equipe novaEquipe = new Equipe();
-                novaEquipe.IdEquipe = int.Parse(linhas[0]);
+                novaEquipe.IdEquipe = int.Parse(linha[0]);
                 novaEquipe.Nome = linha [1];
                 novaEquipe.Imagem = linha [2];
 
