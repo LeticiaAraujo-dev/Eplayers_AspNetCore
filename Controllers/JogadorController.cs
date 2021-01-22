@@ -9,15 +9,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eplayers_AspNetCore.Controllers
 {
+    [Route("Jogador")]
     public class JogadorController : Controller
     {
         Jogador jogadorModel = new Jogador();
+        [Route("Listar")]
+
         public IActionResult Index()
         {
             ViewBag.Jogadores = jogadorModel.ReadAll();
             return View();
         }
-        [Route("Jogador")]
+        [Route("Cadastrar")]
          public IActionResult Cadastrar(IFormCollection form)
         {
             Jogador novoJogador     = new Jogador();
@@ -29,7 +32,7 @@ namespace Eplayers_AspNetCore.Controllers
             jogadorModel.Create(novoJogador);            
             ViewBag.Jogadores = jogadorModel.ReadAll();
 
-            return LocalRedirect("~/Jogador");
+            return LocalRedirect("~/Jogador/Listar");
         }
         
     }

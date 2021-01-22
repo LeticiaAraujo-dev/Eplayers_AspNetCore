@@ -28,6 +28,5 @@ namespace Eplayers_AspNetCore.Controllers
             return View();
         }
 
-        
     }
 }
